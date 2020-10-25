@@ -1,10 +1,28 @@
-//DEPENDENCIES
+//---------------
+//--ENVIRONMENTAL VARIABLES
+//---------------
+require("dotenv").config();
+const { PORT = 4500, NODE_ENV = "development" } = process.env;
+//EXPRESS
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 4500;
+//CORS
+const cors = require('cors');
+//IMPORT ROUTERS
 const itemsRouter = require('./controllers/items/items');
+//MORGAN
+const morgan = require('morgan');
+//MONGO
+const mongoose = require('./DB/connect');
 
-//MIDDLEWARE
+//---------------
+//--MIDDLEWARE
+//---------------
+app.use(cors());
+app.use(express.json());
+app.use(morgan("tiny"));
+
+//ROUTERS
 app.use('/items', itemsRouter);
 
 //LISTENER
