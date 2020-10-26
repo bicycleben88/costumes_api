@@ -3,7 +3,8 @@ const { Schema, model } = require('mongoose');
 const itemSchema = new Schema(
     {
         item: String, 
-        img: String
+        img: String,
+        type: String
     }
 );
 

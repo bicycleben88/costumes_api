@@ -15,6 +15,10 @@ items.get('/', async (req, res) => {
 items.post('/', async (req, res) => {
     res.json(await Items.create(req.body));
 });
+//Update 
+items.put('/:id', async (req, res) => {
+    res.json(await Items.findByIdAndUpdate(req.params.id, req.body, { new: true }));
+});
 
 //EXPORT
 module.exports = items;
