@@ -10,6 +10,7 @@ const app = express();
 const cors = require('cors');
 //IMPORT ROUTERS
 const itemsRouter = require('./controllers/items/items');
+const userRouter = require('./controllers/user/user');
 //MORGAN
 const morgan = require('morgan');
 //MONGO
@@ -24,6 +25,7 @@ app.use(morgan("tiny"));
 
 //ROUTERS
 app.use('/items', itemsRouter);
+app.use('/auth', userRouter);
 
 //LISTENER
 app.listen(PORT, () => {
