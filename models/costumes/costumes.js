@@ -9,6 +9,6 @@ const costumeSchema = new Schema(
     }
 );
 
-const Costume = model('item', costumeSchema);
+const Costume = model('costume', costumeSchema);
 
 module.exports = Costume;

@@ -6,7 +6,7 @@ const { Model } = require('mongoose');
 //create express router
 const costume = express.Router()
 //import costume model
-const Costume = require('../../models/costumes');
+const Costume = require('../../models/costumes/costumes');
 
 // ----------------- Routes ----------------------------
 //Index
