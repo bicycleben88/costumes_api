@@ -9,7 +9,7 @@ const Items = require('../../models/items/items')
 //ROUTES
 //Index
 items.get('/', async (req, res) => {
-    res.json(await Items.find({}))
+    res.json(await Items.find({}));
 });
 //Create
 items.post('/', async (req, res) => {

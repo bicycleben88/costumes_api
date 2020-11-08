@@ -11,10 +11,13 @@ const cors = require('cors');
 //IMPORT ROUTERS
 const itemsRouter = require('./controllers/items/items');
 const userRouter = require('./controllers/user/user');
+const costumesRouter = require('./controllers/costumes/costumes');
 //MORGAN
 const morgan = require('morgan');
 //MONGO
 const mongoose = require('./DB/connect');
+//AUTH 
+const auth = require('./auth');
 
 //---------------
 //--MIDDLEWARE
@@ -26,6 +29,11 @@ app.use(morgan("tiny"));
 //ROUTERS
 app.use('/items', itemsRouter);
 app.use('/auth', userRouter);
+app.use('/costumes', costumesRouter)
+//test auth middleware
+app.get('/', auth, (req, res) => {
+    res.json(req.payload);
+});
 
 //LISTENER
 app.listen(PORT, () => {

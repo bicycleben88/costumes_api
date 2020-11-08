@@ -15,7 +15,7 @@ const {SECRET} = process.env;
 //Sign Up
 router.post('/signup', async (req, res) => {
     try {
-        req.body.password = await bcrypt.hash(req.body.password, 10);
+        req.body.password = await bcrypt.hash(req.body.password, 10); 
         const newUser = await User.create(req.body);
         res.status(200).json(newUser);
     } catch (err) {
