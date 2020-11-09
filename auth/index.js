@@ -3,7 +3,6 @@ const {SECRET} = process.env;
 const jwt = require('jsonwebtoken');
 
 const auth = async (req, res, next) => {
-    console.log(req.headers)
     try {
         //if authorization headers exist
         if(req.headers.authorization) {
