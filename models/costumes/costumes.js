@@ -5,7 +5,8 @@ const costumeSchema = new Schema(
         username: String,
         top: Object,
         bottom: Object, 
-        accessory: Object
+        accessory: Object,
+        name: String
     }
 );
 
