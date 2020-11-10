@@ -43,9 +43,17 @@ costume.put('/:id', auth, async (req, res) => {
     const { username } = req.payload;
     req.body.username = username; 
     try {
-        res.json(await Costume.findByIdAndUpdate(req.params.id, req.body, { new: true }));
+        res.status(200).json(await Costume.findByIdAndUpdate(req.params.id, req.body, { new: true }));
     } catch (error) {
         res.status(400).json({error: error});
+    }
+});
+//Show
+costume.get('/:id', auth, async (req, res) => {
+    try{
+        res.status(200).json(await Costume.findById(req.params.id));
+    } catch (err) {
+        res.status(400).json({error: err})
     }
 });
 
