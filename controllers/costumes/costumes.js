@@ -48,14 +48,6 @@ costume.put('/:id', auth, async (req, res) => {
         res.status(400).json({error: error});
     }
 });
-//Show
-costume.get('/:id', auth, async (req, res) => {
-    try{
-        res.status(200).json(await Costume.findById(req.params.id));
-    } catch (err) {
-        res.status(400).json({error: err})
-    }
-});
 
 // ------------------ Export ----------------------------
 module.exports = costume;
