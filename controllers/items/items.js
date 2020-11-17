@@ -4,7 +4,7 @@ const { Model } = require('mongoose');
 const items = express.Router();
 const Items = require('../../models/items/items')
 
-//MONGOOSE
+//MONGOOSE 
 
 //ROUTES
 //Index
